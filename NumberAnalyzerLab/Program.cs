@@ -7,26 +7,33 @@ while (true)
     Console.WriteLine("Please enter an integer between 1 and 100:");
     string input = Console.ReadLine();
     int number = int.Parse(input);
-    
-    if (number % 2 != 0 && number < 60)
+
+    if (number > 0 && number <= 100)
     {
-        Console.WriteLine(name + ", you entered " + number + ", which is odd and less than 60.");
+        if (number % 2 != 0 && number < 60)
+        {
+            Console.WriteLine(name + ", you entered " + number + ", which is odd and less than 60.");
+        }
+        else if (number % 2 == 0 && number >= 2 && number <= 24)
+        {
+            Console.WriteLine(name + ", You entered " + number + ", which is even and less than 25.");
+        }
+        else if (number % 2 == 0 && number >= 26 && number <= 60)
+        {
+            Console.WriteLine(name + ", You entered " + number + ", which is even and between 26 and 60 inclusive.");
+        }
+        else if (number % 2 == 0 && number > 60)
+        {
+            Console.WriteLine(name + ", You entered " + number + ", which is even and greater than 60.");
+        }
+        else if (number % 2 != 0 && number > 60)
+        {
+            Console.WriteLine(name + ", You entered " + number + ", which is odd and greater than 60.");
+        }
     }
-    else if (number % 2 == 0 && number >= 2 && number <= 24)
+    else
     {
-        Console.WriteLine(name + ", You entered " + number + ", which is even and less than 25.");
-    }
-    else if (number % 2 == 0 && number >= 26 && number <= 60)
-    {
-        Console.WriteLine(name + ", You entered " + number + ", which is even and between 26 and 60 inclusive.");
-    }
-    else if (number % 2 == 0 && number > 60)
-    {
-        Console.WriteLine(name + ", You entered " + number + ", which is even and greater than 60.");
-    }
-    else if (number % 2 != 0 && number > 60)
-    {
-        Console.WriteLine(name + ", You entered " + number + ", which is odd and greater than 60.");
+        Console.WriteLine(name + ", please pick a positive integer between 1 and 100.");
     }
 
     while (true)
